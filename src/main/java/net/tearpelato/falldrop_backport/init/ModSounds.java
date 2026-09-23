@@ -7,6 +7,8 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.block.SoundType;
 import net.tearpelato.falldrop_backport.Constants;
 
+import static net.minecraft.sounds.SoundEvents.EMPTY;
+
 public class ModSounds {
 
     public static final SoundEvent SHELF_MUSHROOM_BOUNCE = registerSoundEvent("block.shelf_mushroom.bounce");
@@ -14,7 +16,6 @@ public class ModSounds {
     public static final SoundEvent SHELF_MUSHROOM_FALL = registerSoundEvent("block.shelf_mushroom.fall");
     public static final SoundEvent SHELF_MUSHROOM_PLACE = registerSoundEvent("block.shelf_mushroom.place");
     public static final SoundEvent SHELF_MUSHROOM_STEP = registerSoundEvent("block.shelf_mushroom.step");
-    public static final SoundEvent EMPTY = registerSoundEvent("intentionally_emptys");
     public static final SoundEvent POPLAR_LEAVES_BREAK = registerSoundEvent("block.poplar_leaves.break");
     public static final SoundEvent POPLAR_LEAVES_HIT = registerSoundEvent("block.poplar_leaves.hit");
     public static final SoundEvent POPLAR_LEAVES_FALL = registerSoundEvent("block.poplar_leaves.fall");
@@ -25,7 +26,6 @@ public class ModSounds {
     public static final SoundEvent STRAW_BED_STEP = registerSoundEvent("block.straw_bed.step");
     public static final SoundEvent STRAW_BED_PLACE = registerSoundEvent("block.straw_bed.place");
     public static final SoundEvent STRAW_BED_HIT = registerSoundEvent("block.straw_bed.hit");
-    public static final SoundEvent STRAW_BED_FALL = registerSoundEvent("block.straw_bed.fall");
     public static final SoundEvent RED_SHRUB_BREAK = registerSoundEvent("block.red_shrub.break");
     public static final SoundEvent RED_SHRUB_PLACE = registerSoundEvent("block.red_shrub.place");
 
@@ -36,7 +36,7 @@ public class ModSounds {
 
 
     public static final SoundType SHELF_MUSHROOM = new SoundType(1.0f, 1.0f,SHELF_MUSHROOM_BREAK, SHELF_MUSHROOM_STEP,SHELF_MUSHROOM_PLACE, EMPTY, SHELF_MUSHROOM_FALL);
-    public static final SoundType STRAW_BED = new SoundType(1.0F,1.0F, STRAW_BED_BREAK, STRAW_BED_STEP, STRAW_BED_PLACE,STRAW_BED_HIT, STRAW_BED_FALL);
+    public static final SoundType STRAW_BED = new SoundType(1.0F,1.0F, STRAW_BED_BREAK, STRAW_BED_STEP, STRAW_BED_PLACE,STRAW_BED_HIT, EMPTY);
     public static final SoundType POPLAR_LEAVES = new SoundType(1.0F,1.0F, POPLAR_LEAVES_BREAK, POPLAR_LEAVES_STEP, POPLAR_LEAVES_PLACE,POPLAR_LEAVES_HIT, POPLAR_LEAVES_FALL);
     public static final SoundType RED_SHRUB = new SoundType(1.0F,1.0F,RED_SHRUB_BREAK, EMPTY, RED_SHRUB_PLACE, EMPTY, EMPTY);
 
