@@ -129,7 +129,7 @@ public class ModCreativeTabs {
 			                    ModItems.POPLAR_HANGING_SIGN);
 			entries.insertAfter(Blocks.BED.pink(), ModBlocks.STRAW_BED);
 		});
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> {
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> {
 			entries.insertAfter(Items.PALE_OAK_CHEST_BOAT,
 			                    ModItems.POPLAR_BOAT, ModItems.POPLAR_CHEST_BOAT);
 		});
