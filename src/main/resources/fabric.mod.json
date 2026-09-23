@@ -4,7 +4,10 @@
   "version": "${version}",
   "name": "FallDropBackport",
   "description": "",
-  "authors": [],
+  "authors": [
+	"Tier1234",
+	"PINPAL"
+  ],
   "contact": {},
   "license": "MIT",
   "icon": "logo_mod.png",

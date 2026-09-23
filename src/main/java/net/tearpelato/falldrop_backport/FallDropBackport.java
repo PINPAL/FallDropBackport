@@ -1,7 +1,6 @@
 package net.tearpelato.falldrop_backport;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.client.renderer.Sheets;
 import net.tearpelato.falldrop_backport.init.ModBiomes;
 import net.tearpelato.falldrop_backport.init.*;
 import terrablender.api.TerraBlenderApi;
@@ -9,7 +8,7 @@ import terrablender.api.TerraBlenderApi;
 public class FallDropBackport implements ModInitializer, TerraBlenderApi {
     @Override
     public void onInitialize() {
-        ModCreativeTabs.registerCreativeModeTabs();
+		ModCreativeTabs.registerVanillaTabs();
 
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();

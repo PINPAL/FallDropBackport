@@ -1,153 +1,137 @@
 package net.tearpelato.falldrop_backport.init;
 
-import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
-import net.tearpelato.falldrop_backport.Constants;
 
 public class ModCreativeTabs {
 
-
-    public static final CreativeModeTab FALL_DROP_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,Constants.id("falldrop_backport"),
-            FabricCreativeModeTab.builder()
-                    .title(Component.translatable(Constants.MOD_ID + ".fall_drop_tab"))
-                    .icon(()-> new ItemStack(Blocks.LEAF_LITTER))
-                    .displayItems((provider, output)->{
-                        output.accept(ModBlocks.WHITE_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.WHITE_CONCRETE_SLAB);
-                        output.accept(ModBlocks.WHITE_WOOL_STAIRS);
-                        output.accept(ModBlocks.WHITE_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.white());
-
-                        output.accept(ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.LIGHT_GRAY_CONCRETE_SLAB);
-                        output.accept(ModBlocks.LIGHT_GRAY_WOOL_STAIRS);
-                        output.accept(ModBlocks.LIGHT_GRAY_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.lightGray());
-
-                        output.accept(ModBlocks.GRAY_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.GRAY_CONCRETE_SLAB);
-                        output.accept(ModBlocks.GRAY_WOOL_STAIRS);
-                        output.accept(ModBlocks.GRAY_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.gray());
-
-                        output.accept(ModBlocks.BLACK_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.BLACK_CONCRETE_SLAB);
-                        output.accept(ModBlocks.BLACK_WOOL_STAIRS);
-                        output.accept(ModBlocks.BLACK_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.black());
-
-                        output.accept(ModBlocks.BROWN_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.BROWN_CONCRETE_SLAB);
-                        output.accept(ModBlocks.BROWN_WOOL_STAIRS);
-                        output.accept(ModBlocks.BROWN_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.brown());
-
-                        output.accept(ModBlocks.RED_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.RED_CONCRETE_SLAB);
-                        output.accept(ModBlocks.RED_WOOL_STAIRS);
-                        output.accept(ModBlocks.RED_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.red());
-
-                        output.accept(ModBlocks.ORANGE_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.ORANGE_CONCRETE_SLAB);
-                        output.accept(ModBlocks.ORANGE_WOOL_STAIRS);
-                        output.accept(ModBlocks.ORANGE_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.orange());
-
-                        output.accept(ModBlocks.YELLOW_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.YELLOW_CONCRETE_SLAB);
-                        output.accept(ModBlocks.YELLOW_WOOL_STAIRS);
-                        output.accept(ModBlocks.YELLOW_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.yellow());
-
-                        output.accept(ModBlocks.LIME_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.LIME_CONCRETE_SLAB);
-                        output.accept(ModBlocks.LIME_WOOL_STAIRS);
-                        output.accept(ModBlocks.LIME_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.lime());
-
-                        output.accept(ModBlocks.GREEN_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.GREEN_CONCRETE_SLAB);
-                        output.accept(ModBlocks.GREEN_WOOL_STAIRS);
-                        output.accept(ModBlocks.GREEN_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.green());
-
-                        output.accept(ModBlocks.CYAN_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.CYAN_CONCRETE_SLAB);
-                        output.accept(ModBlocks.CYAN_WOOL_STAIRS);
-                        output.accept(ModBlocks.CYAN_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.cyan());
-
-                        output.accept(ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.LIGHT_BLUE_CONCRETE_SLAB);
-                        output.accept(ModBlocks.LIGHT_BLUE_WOOL_STAIRS);
-                        output.accept(ModBlocks.LIGHT_BLUE_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.lightBlue());
-
-                        output.accept(ModBlocks.BLUE_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.BLUE_CONCRETE_SLAB);
-                        output.accept(ModBlocks.BLUE_WOOL_STAIRS);
-                        output.accept(ModBlocks.BLUE_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.blue());
-
-                        output.accept(ModBlocks.PURPLE_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.PURPLE_CONCRETE_SLAB);
-                        output.accept(ModBlocks.PURPLE_WOOL_STAIRS);
-                        output.accept(ModBlocks.PURPLE_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.purple());
-
-                        output.accept(ModBlocks.MAGENTA_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.MAGENTA_CONCRETE_SLAB);
-                        output.accept(ModBlocks.MAGENTA_WOOL_STAIRS);
-                        output.accept(ModBlocks.MAGENTA_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.magenta());
-
-                        output.accept(ModBlocks.PINK_CONCRETE_STAIRS);
-                        output.accept(ModBlocks.PINK_CONCRETE_SLAB);
-                        output.accept(ModBlocks.PINK_WOOL_STAIRS);
-                        output.accept(ModBlocks.PINK_WOOL_SLAB);
-                        output.accept(ModItems.CUSHION.pink());
-
-
-
-                        output.accept(ModBlocks.POPLAR_LOG);
-                        output.accept(ModBlocks.POPLAR_WOOD);
-                        output.accept(ModBlocks.STRIPPED_POPLAR_LOG);
-                        output.accept(ModBlocks.STRIPPED_POPLAR_WOOD);
-                        output.accept(ModBlocks.POPLAR_PLANKS);
-                        output.accept(ModBlocks.POPLAR_STAIRS);
-                        output.accept(ModBlocks.POPLAR_SLAB);
-                        output.accept(ModBlocks.POPLAR_FENCE);
-                        output.accept(ModBlocks.POPLAR_FENCE_GATE);
-                        output.accept(ModBlocks.POPLAR_DOOR);
-                        output.accept(ModBlocks.POPLAR_TRAPDOOR);
-                        output.accept(ModBlocks.POPLAR_PRESSURE_PLATE);
-                        output.accept(ModBlocks.POPLAR_BUTTON);
-                        output.accept(ModItems.POPLAR_SIGN);
-                        output.accept(ModItems.POPLAR_HANGING_SIGN);
-                        output.accept(ModItems.POPLAR_BOAT);
-                        output.accept(ModItems.POPLAR_CHEST_BOAT);
-                        output.accept(ModBlocks.POPLAR_SHELF);
-                        output.accept(ModBlocks.RED_POPLAR_LEAVES);
-                        output.accept(ModBlocks.ORANGE_POPLAR_LEAVES);
-                        output.accept(ModBlocks.YELLOW_POPLAR_LEAVES);
-                        output.accept(ModBlocks.RED_SHRUB);
-                        output.accept(ModBlocks.POPLAR_SAPLING);
-                        output.accept(ModBlocks.SHELF_MUSHROOM);
-                        output.accept(ModBlocks.STRAW_BED);
-
-                    }).build()
-    );
-
-
-
-
-    public static void registerCreativeModeTabs() {
-        Constants.LOGGER.info("Registering Creative Mode Tabs for " + Constants.MOD_ID);
-    }
+	public static void registerVanillaTabs() {
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> {
+			entries.insertAfter(Blocks.PALE_OAK_BUTTON,
+			  ModBlocks.POPLAR_LOG,
+			  ModBlocks.POPLAR_WOOD,
+			  ModBlocks.STRIPPED_POPLAR_LOG,
+			  ModBlocks.STRIPPED_POPLAR_WOOD,
+			  ModBlocks.POPLAR_PLANKS,
+			  ModBlocks.POPLAR_STAIRS,
+			  ModBlocks.POPLAR_SLAB,
+			  ModBlocks.POPLAR_FENCE,
+			  ModBlocks.POPLAR_FENCE_GATE,
+			  ModBlocks.POPLAR_DOOR,
+			  ModBlocks.POPLAR_TRAPDOOR,
+			  ModBlocks.POPLAR_PRESSURE_PLATE,
+			  ModBlocks.POPLAR_BUTTON
+			);
+		});
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COLORED_BLOCKS).register(entries -> {
+			entries.insertAfter(Blocks.WOOL.pink(),
+			  ModBlocks.WHITE_WOOL_STAIRS,
+			  ModBlocks.LIGHT_GRAY_WOOL_STAIRS,
+			  ModBlocks.GRAY_WOOL_STAIRS,
+			  ModBlocks.BLACK_WOOL_STAIRS,
+			  ModBlocks.BROWN_WOOL_STAIRS,
+			  ModBlocks.RED_WOOL_STAIRS,
+			  ModBlocks.ORANGE_WOOL_STAIRS,
+			  ModBlocks.YELLOW_WOOL_STAIRS,
+			  ModBlocks.LIME_WOOL_STAIRS,
+			  ModBlocks.GREEN_WOOL_STAIRS,
+			  ModBlocks.CYAN_WOOL_STAIRS,
+			  ModBlocks.LIGHT_BLUE_WOOL_STAIRS,
+			  ModBlocks.BLUE_WOOL_STAIRS,
+			  ModBlocks.PURPLE_WOOL_STAIRS,
+			  ModBlocks.MAGENTA_WOOL_STAIRS,
+			  ModBlocks.PINK_WOOL_STAIRS,
+			  ModBlocks.WHITE_WOOL_SLAB,
+			  ModBlocks.LIGHT_GRAY_WOOL_SLAB,
+			  ModBlocks.GRAY_WOOL_SLAB,
+			  ModBlocks.BLACK_WOOL_SLAB,
+			  ModBlocks.BROWN_WOOL_SLAB,
+			  ModBlocks.RED_WOOL_SLAB,
+			  ModBlocks.ORANGE_WOOL_SLAB,
+			  ModBlocks.YELLOW_WOOL_SLAB,
+			  ModBlocks.LIME_WOOL_SLAB,
+			  ModBlocks.GREEN_WOOL_SLAB,
+			  ModBlocks.CYAN_WOOL_SLAB,
+			  ModBlocks.LIGHT_BLUE_WOOL_SLAB,
+			  ModBlocks.BLUE_WOOL_SLAB,
+			  ModBlocks.PURPLE_WOOL_SLAB,
+			  ModBlocks.MAGENTA_WOOL_SLAB,
+			  ModBlocks.PINK_WOOL_SLAB
+			);
+			entries.insertAfter(Blocks.CONCRETE.pink(),
+			  ModBlocks.WHITE_CONCRETE_STAIRS,
+			  ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS,
+			  ModBlocks.GRAY_CONCRETE_STAIRS,
+			  ModBlocks.BLACK_CONCRETE_STAIRS,
+			  ModBlocks.BROWN_CONCRETE_STAIRS,
+			  ModBlocks.RED_CONCRETE_STAIRS,
+			  ModBlocks.ORANGE_CONCRETE_STAIRS,
+			  ModBlocks.YELLOW_CONCRETE_STAIRS,
+			  ModBlocks.LIME_CONCRETE_STAIRS,
+			  ModBlocks.GREEN_CONCRETE_STAIRS,
+			  ModBlocks.CYAN_CONCRETE_STAIRS,
+			  ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS,
+			  ModBlocks.BLUE_CONCRETE_STAIRS,
+			  ModBlocks.PURPLE_CONCRETE_STAIRS,
+			  ModBlocks.MAGENTA_CONCRETE_STAIRS,
+			  ModBlocks.PINK_CONCRETE_STAIRS,
+			  ModBlocks.WHITE_CONCRETE_SLAB,
+			  ModBlocks.LIGHT_GRAY_CONCRETE_SLAB,
+			  ModBlocks.GRAY_CONCRETE_SLAB,
+			  ModBlocks.BLACK_CONCRETE_SLAB,
+			  ModBlocks.BROWN_CONCRETE_SLAB,
+			  ModBlocks.RED_CONCRETE_SLAB,
+			  ModBlocks.ORANGE_CONCRETE_SLAB,
+			  ModBlocks.YELLOW_CONCRETE_SLAB,
+			  ModBlocks.LIME_CONCRETE_SLAB,
+			  ModBlocks.GREEN_CONCRETE_SLAB,
+			  ModBlocks.CYAN_CONCRETE_SLAB,
+			  ModBlocks.LIGHT_BLUE_CONCRETE_SLAB,
+			  ModBlocks.BLUE_CONCRETE_SLAB,
+			  ModBlocks.PURPLE_CONCRETE_SLAB,
+			  ModBlocks.MAGENTA_CONCRETE_SLAB,
+			  ModBlocks.PINK_CONCRETE_SLAB
+			);
+			entries.insertAfter(
+			  Blocks.BED.pink(),
+//			  ModItems.CUSHION.asList().toArray(ItemLike[]::new)
+			  ModItems.CUSHION.white(),
+			  ModItems.CUSHION.lightGray(),
+			  ModItems.CUSHION.gray(),
+			  ModItems.CUSHION.black(),
+			  ModItems.CUSHION.brown(),
+			  ModItems.CUSHION.red(),
+			  ModItems.CUSHION.orange(),
+			  ModItems.CUSHION.yellow(),
+			  ModItems.CUSHION.lime(),
+			  ModItems.CUSHION.green(),
+			  ModItems.CUSHION.cyan(),
+			  ModItems.CUSHION.lightBlue(),
+			  ModItems.CUSHION.blue(),
+			  ModItems.CUSHION.purple(),
+			  ModItems.CUSHION.magenta(),
+			  ModItems.CUSHION.pink()
+			);
+		});
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries -> {
+			entries.insertAfter(Blocks.PALE_OAK_LOG, ModBlocks.POPLAR_LOG);
+			entries.insertAfter(Blocks.PALE_OAK_LEAVES,
+			                    ModBlocks.RED_POPLAR_LEAVES, ModBlocks.ORANGE_POPLAR_LEAVES, ModBlocks.YELLOW_POPLAR_LEAVES);
+			entries.insertAfter(Blocks.PALE_OAK_SAPLING, ModBlocks.POPLAR_SAPLING);
+			entries.insertAfter(Blocks.RED_MUSHROOM,ModBlocks.SHELF_MUSHROOM);
+			entries.insertAfter(Blocks.BUSH,ModBlocks.RED_SHRUB);
+		});
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(entries -> {
+			entries.insertAfter(Blocks.PALE_OAK_SHELF, ModBlocks.POPLAR_SHELF);
+			entries.insertAfter(Blocks.PALE_OAK_HANGING_SIGN,
+			                    ModItems.POPLAR_SIGN,
+			                    ModItems.POPLAR_HANGING_SIGN);
+			entries.insertAfter(Blocks.BED.pink(), ModBlocks.STRAW_BED);
+		});
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> {
+			entries.insertAfter(Items.PALE_OAK_CHEST_BOAT,
+			                    ModItems.POPLAR_BOAT, ModItems.POPLAR_CHEST_BOAT);
+		});
+	}
 }
