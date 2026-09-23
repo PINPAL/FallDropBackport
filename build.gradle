@@ -22,6 +22,7 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 
 fabricApi {
     configureDataGeneration {
+        client = true
         outputDirectory.set(file("src/generated/resources"))
     }
 }
@@ -55,18 +56,6 @@ loom {
             setConfigName('Fabric Server')
             ideConfigGenerated(true)
             runDir('runs/server')
-        }
-        datagen {
-            inherit client
-            name "Data Generation"
-            setConfigName('Fabric Datagen')
-            ideConfigGenerated(true)
-
-            vmArg "-Dfabric-api.datagen"
-            vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated/resources")}"
-            vmArg "-Dfabric-api.datagen.modid=${mod_namespace}"
-
-            runDir 'runs/datagen'
         }
     }
 }

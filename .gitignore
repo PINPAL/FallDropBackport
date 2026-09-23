@@ -3,6 +3,7 @@
 
 # Gradle cache folder
 .gradle
+src/generated/resources/.cache
 
 # Gradle build folder
 build
