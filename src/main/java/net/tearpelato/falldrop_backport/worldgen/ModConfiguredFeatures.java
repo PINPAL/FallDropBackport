@@ -4,6 +4,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
@@ -26,6 +27,7 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLogsD
 import net.minecraft.world.level.levelgen.feature.treedecorators.PlaceOnGroundDecorator;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RandomOffsetPlacement;
 import net.tearpelato.falldrop_backport.Constants;
 import net.tearpelato.falldrop_backport.init.ModBlocks;
@@ -38,7 +40,7 @@ import java.util.List;
 public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> RED_SHRUB = registerKey("red_shrub");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> POPLAR_TREE = registerKey("poplar_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_DAPPLED_FOREST = registerKey("poplar_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> POPLAR_TREES = registerKey("poplar_trees");
     public static final ResourceKey<ConfiguredFeature<?, ?>> POPLAR_RED = registerKey("poplar_red");
     public static final ResourceKey<ConfiguredFeature<?, ?>> POPLAR_ORANGE = registerKey("poplar_orange");
@@ -53,7 +55,7 @@ public class ModConfiguredFeatures {
         PlaceOnGroundDecorator sparseLeafLitter = new PlaceOnGroundDecorator(96, 4, 2, new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 3)));
         PlaceOnGroundDecorator thickLeafLitter = new PlaceOnGroundDecorator(150, 2, 2, new WeightedStateProvider(VegetationFeatures.leafLitterPatchBuilder(1, 4)));
         var lookup = context.lookup(Registries.CONFIGURED_FEATURE);
-
+        PlacementModifier survive = PlacementUtils.filteredByBlockSurvival(ModBlocks.POPLAR_SAPLING);
 
         context.register(SHELF_MUSHROOM, new ConfiguredFeature<>(Feature.SIMPLE_BLOCK,
                 new SimpleBlockConfiguration(
@@ -83,24 +85,26 @@ public class ModConfiguredFeatures {
 
 
 
-            context.register(POPLAR_RED, new ConfiguredFeature<>(Feature.TREE,
-                    createPoplar(ModBlocks.RED_POPLAR_LEAVES).decorators(List.of(new ShelfMushroomDecorator(0.4F))).build()));
+        context.register(POPLAR_RED, new ConfiguredFeature<>(Feature.TREE,
+                createPoplar(ModBlocks.RED_POPLAR_LEAVES).decorators(List.of(new ShelfMushroomDecorator(0.4F))).build()));
 
-            context.register(POPLAR_ORANGE, new ConfiguredFeature<>(Feature.TREE,
-                    createPoplar(ModBlocks.ORANGE_POPLAR_LEAVES).decorators(List.of(new ShelfMushroomDecorator(0.4F))).build()));
+        context.register(POPLAR_ORANGE, new ConfiguredFeature<>(Feature.TREE,
+                createPoplar(ModBlocks.ORANGE_POPLAR_LEAVES).decorators(List.of(new ShelfMushroomDecorator(0.4F))).build()));
 
-            context.register(POPLAR_YELLOW, new ConfiguredFeature<>(Feature.TREE,
-                    createPoplar(ModBlocks.YELLOW_POPLAR_LEAVES).decorators(List.of(new ShelfMushroomDecorator(0.4F))).build()));
+        context.register(POPLAR_YELLOW, new ConfiguredFeature<>(Feature.TREE,
+                createPoplar(ModBlocks.YELLOW_POPLAR_LEAVES).decorators(List.of(new ShelfMushroomDecorator(0.4F))).build()));
 
 
 
-        context.register(POPLAR_TREE, new ConfiguredFeature<>(Feature.RANDOM_SELECTOR,
+        context.register(TREES_DAPPLED_FOREST, new ConfiguredFeature<>(Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfiguration(
                         List.of(
-                                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(lookup.getOrThrow(RED_POPLAR_LEAF_LITTER)), 0.33f),
-                                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(lookup.getOrThrow(ORANGE_POPLAR_LEAF_LITTER)), 0.33f),
-                                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(lookup.getOrThrow(FALLEN_POPLAR)), 0.30f)),
-                        PlacementUtils.inlinePlaced(lookup.getOrThrow(YELLOW_POPLAR_LEAF_LITTER)))));
+                                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(lookup.getOrThrow(RED_POPLAR_LEAF_LITTER), survive), 200f / 677f),
+                                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(lookup.getOrThrow(ORANGE_POPLAR_LEAF_LITTER), survive), 240f / 477f),
+                                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(lookup.getOrThrow(YELLOW_POPLAR_LEAF_LITTER), survive), 90f / 237f),
+                                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(lookup.getOrThrow(TreeFeatures.SPRUCE),
+                                        PlacementUtils.filteredByBlockSurvival(Blocks.SPRUCE_SAPLING)), 27f / 147f)),
+                        PlacementUtils.inlinePlaced(lookup.getOrThrow(FALLEN_POPLAR)))));
 
         context.register(POPLAR_TREES, new ConfiguredFeature<>(Feature.RANDOM_SELECTOR,
                 new RandomFeatureConfiguration(
@@ -108,6 +112,7 @@ public class ModConfiguredFeatures {
                                 new WeightedPlacedFeature(PlacementUtils.inlinePlaced(lookup.getOrThrow(POPLAR_RED)), 0.33f),
                                 new WeightedPlacedFeature(PlacementUtils.inlinePlaced(lookup.getOrThrow(POPLAR_ORANGE)), 0.33f)),
                         PlacementUtils.inlinePlaced(lookup.getOrThrow(POPLAR_YELLOW)))));
+
 
 
     }
@@ -147,7 +152,7 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.POPLAR_LOG),
                 UniformInt.of(4,7))
                 .logDecorators(List.of(
-        new AttachedToLogsDecorator(0.1F, BlockStateProvider.simple(Blocks.BROWN_MUSHROOM),
-                List.of(Direction.UP)))).logDecorators(List.of(new ShelfMushroomDecorator(0.8F)));
+                        new AttachedToLogsDecorator(0.1F, BlockStateProvider.simple(Blocks.BROWN_MUSHROOM),
+                                List.of(Direction.UP)))).logDecorators(List.of(new ShelfMushroomDecorator(0.8F)));
     }
 }

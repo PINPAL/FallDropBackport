@@ -4,10 +4,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.BoatItem;
-import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Block;
 import net.tearpelato.falldrop_backport.Constants;
 import net.tearpelato.falldrop_backport.item.CushionItem;
 
@@ -59,6 +57,10 @@ public class ModItems {
     public static final Item PINK_CUSHION = registerItem("pink_cushion",
             properties -> new CushionItem(properties.stacksTo(16), DyeColor.PINK));
 
+    public static final Item STRAW_BED = registerBlockItem("straw_bed", ModBlocks.STRAW_BED,
+            properties -> new Item(properties.stacksTo(16)));
+
+
     public static Item getCushion(DyeColor color) {
         return switch (color) {
             case WHITE -> WHITE_CUSHION;
@@ -80,6 +82,13 @@ public class ModItems {
         };
     }
 
+
+
+    private static Item registerBlockItem(String name, Block block, Function<Item.Properties, Item> function) {
+        return Registry.register(BuiltInRegistries.ITEM, Constants.vanilla(name),
+                new BlockItem(block, new Item.Properties().useBlockDescriptionPrefix()
+                        .setId(ResourceKey.create(Registries.ITEM, Constants.vanilla(name)))));
+    }
 
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {

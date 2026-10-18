@@ -15,7 +15,7 @@ public class ModMapDecorationTypes {
     public static final Holder<MapDecorationType> ABANDONED_CAMP = register("abandoned_camp");
     public static final Holder<MapDecorationType> DESERT_PYRAMID = register("desert_pyramid");
     public static final Holder<MapDecorationType> MINESHAFT = register("mineshaft");
-    public static final Holder<MapDecorationType> WARM_OCEAN_RUINS = register("warm_ocean_ruins");
+    public static final Holder<MapDecorationType> OCEAN_RUIN_WARM = register("warm_ocean_ruins");
 
     public static void registerMapDecorationTypes() {
         Constants.LOGGER.info("Registering Mod Map Decorations Types for " + Constants.MOD_ID);

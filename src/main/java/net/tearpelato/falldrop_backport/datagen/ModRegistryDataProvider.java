@@ -35,8 +35,8 @@ public class ModRegistryDataProvider extends FabricDynamicRegistryProvider {
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.POPLAR_RED).value());
         entries.add(ModConfiguredFeatures.POPLAR_YELLOW,
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.POPLAR_YELLOW).value());
-        entries.add(ModConfiguredFeatures.POPLAR_TREE,
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.POPLAR_TREE).value());
+        entries.add(ModConfiguredFeatures.TREES_DAPPLED_FOREST,
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.TREES_DAPPLED_FOREST).value());
         entries.add(ModConfiguredFeatures.POPLAR_TREES,
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.POPLAR_TREES).value());
         entries.add(ModConfiguredFeatures.RED_SHRUB,

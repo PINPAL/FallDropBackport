@@ -2,6 +2,7 @@ package net.tearpelato.falldrop_backport;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.renderer.Sheets;
+import net.tearpelato.falldrop_backport.client.item.ExplorerMapItemModel;
 import net.tearpelato.falldrop_backport.init.ModBiomes;
 import net.tearpelato.falldrop_backport.init.*;
 import terrablender.api.TerraBlenderApi;
@@ -9,6 +10,7 @@ import terrablender.api.TerraBlenderApi;
 public class FallDropBackport implements ModInitializer, TerraBlenderApi {
     @Override
     public void onInitialize() {
+        ExplorerMapItemModel.init();
         ModCreativeTabs.registerCreativeModeTabs();
 
         ModItems.registerModItems();
@@ -27,6 +29,7 @@ public class FallDropBackport implements ModInitializer, TerraBlenderApi {
         ModStrippableBlocks.registerStrippableBlocks();
         ModTreeDecoratorType.registerTreeDecorators();
         ModFuels.registerModFuels();
+        ModEntityDataSerializer.init();
 
 
     }

@@ -30,47 +30,29 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> FALLEN_POPLAR = registerKey("fallen_poplar");
     public static final ResourceKey<PlacedFeature> BROWN_MUSHROOM_DAPPLED_FOREST = registerKey("brow_mushroom_dappled_forest");
     public static final ResourceKey<PlacedFeature> BAMBOO_IN_STRUCTURE = registerKey("bamboo_in_structure");
-    
+    public static final ResourceKey<PlacedFeature> TREES_DAPPLED_FOREST = registerKey("trees_dappled_forest");
+
+
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(context, RED_SHRUB, configuredFeatures.getOrThrow(ModConfiguredFeatures.RED_SHRUB), List.of(new PlacementModifier[]{InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome(), CountPlacement.of(6), RandomOffsetPlacement.ofTriangle(7, 3), BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE)}));
+
+        register(context, RED_SHRUB, configuredFeatures.getOrThrow(ModConfiguredFeatures.RED_SHRUB), List.of(new PlacementModifier[]{InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome(), CountPlacement.of(8), RandomOffsetPlacement.ofTriangle(7, 3), BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE)}));
 
         register(context, RED_POPLAR, configuredFeatures.getOrThrow(ModConfiguredFeatures.RED_POPLAR_LEAF_LITTER),
-                List.of(
-                        PlacementUtils.countExtra(10, 0.1f, 2),
-                        InSquarePlacement.spread(),
-                        SurfaceWaterDepthFilter.forMaxDepth(0),
-                        PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
-                        BlockPredicateFilter.forPredicate(
-                                BlockPredicate.wouldSurvive(ModBlocks.POPLAR_SAPLING.defaultBlockState(), BlockPos.ZERO)
-                        )
-                ));
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1f, 2),
+                        ModBlocks.POPLAR_SAPLING));
 
         register(context, YELLOW_POPLAR, configuredFeatures.getOrThrow(ModConfiguredFeatures.YELLOW_POPLAR_LEAF_LITTER),
-                List.of(
-                        PlacementUtils.countExtra(10, 0.1f, 2),
-                        InSquarePlacement.spread(),
-                        SurfaceWaterDepthFilter.forMaxDepth(0),
-                        PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
-                        BlockPredicateFilter.forPredicate(
-                                BlockPredicate.wouldSurvive(ModBlocks.POPLAR_SAPLING.defaultBlockState(), BlockPos.ZERO)
-                        )
-                ));
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1f, 2),
+                        ModBlocks.POPLAR_SAPLING));
 
         register(context, ORANGE_POPLAR, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORANGE_POPLAR_LEAF_LITTER),
-                List.of(
-                        PlacementUtils.countExtra(10, 0.1f, 2),
-                        InSquarePlacement.spread(),
-                        SurfaceWaterDepthFilter.forMaxDepth(0),
-                        PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
-                        BlockPredicateFilter.forPredicate(
-                                BlockPredicate.wouldSurvive(ModBlocks.POPLAR_SAPLING.defaultBlockState(), BlockPos.ZERO)
-                        )
-                ));
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1f, 2),
+                        ModBlocks.POPLAR_SAPLING));
 
         register(context, FALLEN_POPLAR, configuredFeatures.getOrThrow(ModConfiguredFeatures.FALLEN_POPLAR),
-               List.of(new PlacementModifier[]{PlacementUtils.filteredByBlockSurvival(ModBlocks.POPLAR_SAPLING)}));
+                List.of(new PlacementModifier[]{PlacementUtils.filteredByBlockSurvival(ModBlocks.POPLAR_SAPLING)}));
 
         register(context, SHELF_MUSHROOM, configuredFeatures.getOrThrow(ModConfiguredFeatures.SHELF_MUSHROOM),
                 List.of(              CountPlacement.of(1),
@@ -84,6 +66,14 @@ public class ModPlacedFeatures {
                                 12
                         ),
                         BiomeFilter.biome()));
+
+        register(context, TREES_DAPPLED_FOREST, configuredFeatures.getOrThrow(ModConfiguredFeatures.TREES_DAPPLED_FOREST),
+                List.of(CountPlacement.of(6),
+                        InSquarePlacement.spread(),
+                        SurfaceWaterDepthFilter.forMaxDepth(0),
+                        PlacementUtils.HEIGHTMAP_NO_LEAVES,
+                        BiomeFilter.biome()));
+
         register(context, BROWN_MUSHROOM_DAPPLED_FOREST, configuredFeatures.getOrThrow(VegetationFeatures.BROWN_MUSHROOM), VegetationPlacementsUtils.getMushroomPlacement(2, (PlacementModifier)null));
 
         register(context, BAMBOO_IN_STRUCTURE,
