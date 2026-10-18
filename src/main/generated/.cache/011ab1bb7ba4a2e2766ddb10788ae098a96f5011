@@ -1,4 +1,4 @@
-// 26.1.2	-999999999-01-01T00:00:00	FallDropBackport/Tags for minecraft:block
+// 26.2	-999999999-01-01T00:00:00	FallDropBackport/Tags for minecraft:block
 6a917e1a949f02917dd998a4facf2eb8b2055530 data/minecraft/tags/block/all_hanging_signs.json
 a42c303032c86d258af11f0a97fa65ea1d6582fd data/minecraft/tags/block/cushrion_uses_collision_shape.json
 6b032efcd276b288b7aa5a3975b74938608c6242 data/minecraft/tags/block/doors.json
@@ -7,9 +7,7 @@ f446a5b2ec37a9b24827411263080c50858d5520 data/minecraft/tags/block/fences.json
 8929c78b8ddfb67e347de782ac6a9f08007ec793 data/minecraft/tags/block/flower_pots.json
 72c44315c1e1e7aae7c24aa8a4f46383dfad3894 data/minecraft/tags/block/leaves.json
 e8e8ba97bbb8b6c596ade5a7f8c40941cd62640d data/minecraft/tags/block/logs.json
-22842b6f1bcaebbd2d2a80269d7fe5180877ae6f data/minecraft/tags/block/logs_that_burn.json
 9247aaff9a00f9efb7c30090a767dd76bb563bea data/minecraft/tags/block/mineable/pickaxe.json
-abe12e1c414442635659291d652b03dfe66497f7 data/minecraft/tags/block/saplings.json
 582180645ac62287d1ae462e855704d12b3e51ee data/minecraft/tags/block/signs.json
 a00cfc9ac81f2fe6da4fa44435b87b5621c45ce6 data/minecraft/tags/block/slabs.json
 f38f26005fc6266427778d1deb3ed48d05ac5635 data/minecraft/tags/block/stairs.json
