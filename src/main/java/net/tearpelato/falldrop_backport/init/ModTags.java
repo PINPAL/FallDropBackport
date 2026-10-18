@@ -10,7 +10,7 @@ public class ModTags {
     public static class Blocks{
 
 
-
+        public static final TagKey<Block> CUSHION_USES_COLLISION_SHAPE = createTag("cushrion_uses_collision_shape");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.create(Registries.BLOCK, Constants.vanilla(name));
