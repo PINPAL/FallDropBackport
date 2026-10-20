@@ -7,7 +7,7 @@
       "minecraft:block/leaf_litter/break4",
       "minecraft:block/leaf_litter/break5"
     ],
-    "subtitle": "sounds.block.generic.break"
+    "subtitle": "subtitles.block.generic.break"
   },
   "block.poplar_leaves.fall": {
     "sounds": [
@@ -18,7 +18,7 @@
       "minecraft:block/leaf_litter/step5",
       "minecraft:block/leaf_litter/step6"
     ],
-    "subtitle": "sounds.block.generic.fall"
+    "subtitle": "subtitles.block.generic.fall"
   },
   "block.poplar_leaves.hit": {
     "sounds": [
@@ -29,7 +29,7 @@
       "minecraft:block/leaf_litter/step5",
       "minecraft:block/leaf_litter/step6"
     ],
-    "subtitle": "sounds.block.generic.hit"
+    "subtitle": "subtitles.block.generic.hit"
   },
   "block.poplar_leaves.place": {
     "sounds": [
@@ -39,7 +39,7 @@
       "minecraft:block/leaf_litter/place4",
       "minecraft:block/leaf_litter/place5"
     ],
-    "subtitle": "sounds.block.generic.place"
+    "subtitle": "subtitles.block.generic.place"
   },
   "block.poplar_leaves.step": {
     "sounds": [
@@ -50,7 +50,7 @@
       "minecraft:block/leaf_litter/step5",
       "minecraft:block/leaf_litter/step6"
     ],
-    "subtitle": "sounds.block.generic.footsteps"
+    "subtitle": "subtitles.block.generic.footsteps"
   },
   "block.red_shrub.break": {
     "sounds": [
@@ -59,7 +59,7 @@
       "minecraft:block/red_shrub/break3",
       "minecraft:block/red_shrub/break4"
     ],
-    "subtitle": "sounds.minecraft.red_shrub.break"
+    "subtitle": "subtitles.block.generic.break"
   },
   "block.red_shrub.place": {
     "sounds": [
@@ -68,7 +68,7 @@
       "minecraft:block/red_shrub/place3",
       "minecraft:block/red_shrub/place4"
     ],
-    "subtitle": "sounds.minecraft.red_shrub.place"
+    "subtitle": "subtitles.block.generic.place"
   },
   "block.shelf_mushroom.bounce": {
     "sounds": [
@@ -78,7 +78,7 @@
       "minecraft:block/shelf_mushroom/bounce4",
       "minecraft:block/shelf_mushroom/bounce5"
     ],
-    "subtitle": "sounds.minecraft.shelf_mushroom.bounce"
+    "subtitle": "subtitles.block.shelf_mushroom.bounce"
   },
   "block.shelf_mushroom.break": {
     "sounds": [
@@ -89,13 +89,17 @@
       "minecraft:block/shelf_mushroom/break5",
       "minecraft:block/shelf_mushroom/break6"
     ],
-    "subtitle": "sounds.minecraft.shelf_mushroom.break"
+    "subtitle": "subtitles.block.generic.break"
   },
   "block.shelf_mushroom.fall": {
     "sounds": [
-      "minecraft:block/shelf_mushroom/fall"
+      "minecraft:block/shelf_mushroom/bounce1",
+      "minecraft:block/shelf_mushroom/bounce2",
+      "minecraft:block/shelf_mushroom/bounce3",
+      "minecraft:block/shelf_mushroom/bounce4",
+      "minecraft:block/shelf_mushroom/bounce5"
     ],
-    "subtitle": "sounds.minecraft.shelf_mushroom.bounce"
+    "subtitle": "subtitles.block.generic.fall"
   },
   "block.shelf_mushroom.place": {
     "sounds": [
@@ -106,7 +110,7 @@
       "minecraft:block/shelf_mushroom/place5",
       "minecraft:block/shelf_mushroom/place6"
     ],
-    "subtitle": "sounds.minecraft.shelf_mushroom.place"
+    "subtitle": "subtitles.block.generic.place"
   },
   "block.shelf_mushroom.step": {
     "sounds": [
@@ -117,7 +121,7 @@
       "minecraft:block/shelf_mushroom/step5",
       "minecraft:block/shelf_mushroom/step6"
     ],
-    "subtitle": "sounds.minecraft.shelf_mushroom.step"
+    "subtitle": "subtitles.block.generic.footsteps"
   },
   "block.straw_bed.break": {
     "sounds": [
@@ -126,13 +130,13 @@
       "minecraft:block/straw_bed/break3",
       "minecraft:block/straw_bed/break4"
     ],
-    "subtitle": "sounds.minecraft.straw_bed.break"
+    "subtitle": "subtitles.block.generic.break"
   },
   "block.straw_bed.break_leave": {
     "sounds": [
       "minecraft:block/straw_bed/break_leave"
     ],
-    "subtitle": "sounds.minecraft.straw_bed.leave"
+    "subtitle": "subtitles.block.straw_bed.break_leave"
   },
   "block.straw_bed.hit": {
     "sounds": [
@@ -143,7 +147,7 @@
       "minecraft:block/straw_bed/hit5",
       "minecraft:block/straw_bed/hit6"
     ],
-    "subtitle": "sounds.minecraft.straw_bed.hit"
+    "subtitle": "subtitles.block.generic.hit"
   },
   "block.straw_bed.place": {
     "sounds": [
@@ -152,7 +156,7 @@
       "minecraft:block/straw_bed/place3",
       "minecraft:block/straw_bed/place4"
     ],
-    "subtitle": "sounds.minecraft.straw_bed.place"
+    "subtitle": "subtitles.block.generic.place"
   },
   "block.straw_bed.step": {
     "sounds": [
@@ -163,7 +167,7 @@
       "minecraft:block/straw_bed/step5",
       "minecraft:block/straw_bed/step6"
     ],
-    "subtitle": "sounds.minecraft.shelf_mushroom.step"
+    "subtitle": "subtitles.block.generic.footsteps"
   },
   "entity.cushion.break": {
     "sounds": [
@@ -171,7 +175,7 @@
       "minecraft:entity/cushion/break2",
       "minecraft:entity/cushion/break3"
     ],
-    "subtitle": "sounds.minecraft.cushion.break"
+    "subtitle": "subtitles.entity.cushion.break"
   },
   "entity.cushion.get_up": {
     "sounds": [
@@ -179,7 +183,7 @@
       "minecraft:entity/cushion/get_up2",
       "minecraft:entity/cushion/get_up3"
     ],
-    "subtitle": "sounds.minecraft.cushion.break"
+    "subtitle": "subtitles.entity.cushion.break"
   },
   "entity.cushion.place": {
     "sounds": [
@@ -190,7 +194,7 @@
       "minecraft:entity/cushion/place5",
       "minecraft:entity/cushion/place6"
     ],
-    "subtitle": "sounds.minecraft.cushion.break"
+    "subtitle": "subtitles.entity.cushion.place"
   },
   "entity.cushion.sit": {
     "sounds": [
@@ -198,6 +202,6 @@
       "minecraft:entity/cushion/sit2",
       "minecraft:entity/cushion/sit3"
     ],
-    "subtitle": "sounds.minecraft.cushion.break"
+    "subtitle": "subtitles.entity.cushion.sit"
   }
 }

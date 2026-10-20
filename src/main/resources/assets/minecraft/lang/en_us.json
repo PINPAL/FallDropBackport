@@ -1,5 +1,4 @@
 {
-  "falldrop_backport.fall_drop_tab": "FallDrop Backport",
   "block.minecraft.white_wool_stairs": "White Wool Stairs",
   "block.minecraft.light_gray_wool_stairs": "Light Gray Wool Stairs",
   "block.minecraft.gray_wool_stairs": "Gray Wool Stairs",
@@ -94,6 +93,7 @@
   "block.minecraft.poplar_sign": "Poplar Sign",
   "block.minecraft.poplar_wall_sign": "Poplar Wall Sign",
   "block.minecraft.potted_poplar_sapling": "Potted Poplar Sapling",
+  "block.minecraft.potted_red_shrub": "Potted Red Shrub",
   "block.minecraft.shelf_mushroom": "Shelf Mushroom",
   "block.minecraft.straw_bed": "Straw Bed",
 
@@ -119,9 +119,10 @@
   "item.minecraft.pink_cushion": "Pink Cushion",
 
 
+  "entity.falldrop_backport.poplar_boat": "Poplar Boat with Chest",
   "entity.falldrop_backport.poplar_chest_boat": "Poplar Boat with Chest",
-  "entity.falldrop_backport.poplar_boat": "Poplar Boat",
   "entity.falldrop_backport.cushion": "Cushion",
+
   "mount.sit": "Press %1$s to get up",
 
   "biome.minecraft.dappled_forest": "Dappled Forest",
@@ -135,7 +136,4 @@
   "subtitles.entity.cushion.sit": "Sits on Cushion",
 
   "stat.falldrop_backport.sleep_in_straw_bed": "Times Slept in a Straw Bed"
-
-
-
 }

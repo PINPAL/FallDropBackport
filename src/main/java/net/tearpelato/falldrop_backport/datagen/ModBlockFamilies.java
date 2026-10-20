@@ -5,6 +5,7 @@ import net.tearpelato.falldrop_backport.init.ModBlocks;
 
 public class ModBlockFamilies {
     public static final BlockFamily POPLAR_PLANKS = new BlockFamily.Builder(ModBlocks.POPLAR_PLANKS)
+            .strippedLog(ModBlocks.STRIPPED_POPLAR_LOG)
             .stairs(ModBlocks.POPLAR_STAIRS)
             .slab(ModBlocks.POPLAR_SLAB)
             .fence(ModBlocks.POPLAR_FENCE)

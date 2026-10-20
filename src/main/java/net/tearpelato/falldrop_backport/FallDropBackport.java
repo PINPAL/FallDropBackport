@@ -11,7 +11,7 @@ public class FallDropBackport implements ModInitializer, TerraBlenderApi {
     @Override
     public void onInitialize() {
         ExplorerMapItemModel.init();
-        ModCreativeTabs.registerCreativeModeTabs();
+		ModCreativeTabs.registerVanillaTabs();
 
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
